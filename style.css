@@ -180,3 +180,21 @@ body {
 .social-links a:hover {
   color: #fff;
 }
+/* 全板块统一 16:9 缩略图｜细黑边框｜图片完整不裁切，黑底留白边 */
+.card-thumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid #000;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
