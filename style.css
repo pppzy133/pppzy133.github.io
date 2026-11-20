@@ -198,3 +198,29 @@ body {
   height: auto;
   display: block;
 }
+/* 一排两个卡片，两列等宽占满整排 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* 取消之前给卡片加的固定宽度，让卡片自动占满所在列 */
+.card {
+  max-width: none;
+  margin: 0;
+}
+
+/* 内容区居中，不铺满整个大屏 */
+.works {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* 手机上自动变成一排一个，避免太挤 */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
