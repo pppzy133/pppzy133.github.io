@@ -1,20 +1,15 @@
 const filterBtns = document.querySelectorAll('.filter-nav button');
-const cards = document.querySelectorAll('.card');
+const sections = document.querySelectorAll('.work-category');
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
     const filterVal = btn.dataset.filter;
-
-    cards.forEach(card => {
-      if (filterVal === 'all') {
-        card.classList.remove('hidden');
+    sections.forEach(sec => {
+      if (filterVal === 'all' || sec.dataset.category === filterVal) {
+        sec.style.display = 'block';
       } else {
-        card.classList.toggle('hidden', card.dataset.cat !== filterVal);
+        sec.style.display = 'none';
       }
     });
   });
-
-// 默认选中全部
-document.querySelector('.filter-nav button[data-filter="all"]').classList.add('active');
+});
